@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "c84f5bdd-adf1-4c86-adab-9197f94e299a",
+		"name": "APIREST_Usuario_Emprendimiento_Evento_Voto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario_s",
+			"item": [
+				{
+					"name": "Crear un usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Paolo\",\r\n    \"apellido\": \"Bartoloni\",\r\n    \"email\": \"paolob12@hotmail.com\",\r\n    \"password\": \"012345\",\r\n    \"ciudad\": \"Margarita Belén\",\r\n    \"provincia\": \"Chaco\",\r\n    \"pais\": \"Argentina\",\r\n    \"tipo\": \"OWNER\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/usuarios/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar un usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Carlos\",\r\n    \"apellido\": \"Barrios\",\r\n    \"email\": \"carlos_barrios@gmail.com\",\r\n    \"password\": \"00001\",\r\n    \"ciudad\": \"Margarita Belen\",\r\n    \"provincia\": \"Chaco\",\r\n    \"pais\": \"Argentina\",\r\n    \"tipo\": \"OWNER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuarios por Ciudad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios?ciudad=Resistencia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "ciudad",
+									"value": "Resistencia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuarios por fecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios?fecha=2021-10-10T19:10:58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2021-10-10T19:10:58"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emprendimiento_s",
+			"item": [
+				{
+					"name": "Crear un Emprendimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Trampa para mosquitos\",\r\n    \"descripcion\": \"Descontractura la vida de manera natural, atrae a los mosquitos y sus derivados, usando calor como fuente de atracción y los aniquila con descargas de 5000W\",\r\n    \"contenido\": \"Artefacto eléctrico, autogenerador de energía sustentable para su consumo\",\r\n    \"objetivo\": 250000,\r\n    \"publicado\": true,\r\n    \"url\": \"google/images\",\r\n    \"tags\": [\r\n        {\r\n           \"nombre\": \"Salud\"\r\n        },\r\n        {\r\n           \"nombre\": \"Mosquitos\"\r\n        },\r\n        {\r\n           \"nombre\": \"Jardín\"\r\n        },\r\n        {\r\n            \"nombre\": \"DengueSykaChigunguña\"\r\n        }\r\n        \r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/usuarios/1/emprendimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un EMPRENDIMIENTO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/emprendimientos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar un EMPRENDIMIETO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Horno inteligente\",\r\n    \"descripcion\": \"Electrodomestico ecologico\",\r\n    \"contenido\": \"predice cuál es el tiempo y temperatura para preparar los alimentos en su punto justo de cocción y además consigue aprovechar el calor residual del equipo\",\r\n    \"objetivo\": 90000,\r\n    \"publicado\": false,\r\n    \"url\": \"google/images\",\r\n    \"tags\": [\r\n        {\r\n           \"nombre\": \"Medio Ambiente\"\r\n        },\r\n        {\r\n            \"nombre\": \"Cocina\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/emprendimientos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener TODOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/ap1/v1/emprendimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtner por TAGS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ap1/v1/emprendimientos?nombre=Salud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ap1",
+								"v1",
+								"emprendimientos"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Salud"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener los SIN PUBLICAR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/emprendimientos/no_publicados"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emprendimiento_Evento",
+			"item": [
+				{
+					"name": "Inscribir un Emprendimientos a un Evento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/emprendimientos/1/eventos/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Evento",
+			"item": [
+				{
+					"name": "Crear un Evento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Eco FEST\",\r\n    \"detalles\": \"Evento concientizador de lo importante que resulta cuidar nuestro planeta, hasta que ELON MUSK consiga otre!\",\r\n    \"fechaDecierre\": \"2021/12/20\",\r\n    \"fechaFinal\": \"2021/12/30\",\r\n    \"premio\": 10000000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/eventos"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un Evento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/eventos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar un Evento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/eventos/actualizar-estado"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Ranking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/eventos/1/ranking"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Voto",
+			"item": [
+				{
+					"name": "Crear un Voto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"generado\": \"mobile\",\r\n    \"emprendimientoId\": \"1\",\r\n    \"usuarioId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/votos"
+					},
+					"response": []
+				},
+				{
+					"name": "Total de Votos de un Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/votos/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
